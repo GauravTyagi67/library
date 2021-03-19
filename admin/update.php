@@ -1,0 +1,15 @@
+<?php
+
+	$connection = mysqli_connect("localhost","root","");
+	$db = mysqli_select_db($connection,"library");
+	//This is a database update user information(view) validations query
+	$query = "update admins set name='$_POST[name]',email='$_POST[email]',mobile='$_POST[mobile]'";
+	$query_run = mysqli_query($connection,$query);
+
+?>
+
+<script type="text/javascript">
+	alert("Your update profile successfull...");
+	//This is a redirect page validation query
+	window.location.href="admin_dashboard.php";
+</script>
